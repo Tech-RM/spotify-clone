@@ -1,0 +1,332 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    overflow: hidden;
+    letter-spacing:0.05rem;
+}
+a{
+    text-decoration: none;
+    color:white;
+    opacity: 0.75;
+}
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 354px 1fr;
+    grid-template-rows: repeat(12,1fr);
+    background-color: #121212ff;
+}
+
+.sidebar{
+    grid-column: 1/2;
+    grid-row: 1/12;
+    padding: 0.55rem;
+}
+.nav-links{
+    background-color: rgba(255, 255, 255, 0.045);
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.55rem;
+}
+.nav-links a:hover{
+    opacity: 1;
+}
+.nav-links i{
+    margin-right: 2rem;
+}
+.nav-links a:first-child{
+    opacity: 1;
+}
+.library{
+    background-color: rgba(255, 255, 255, 0.045);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+    height: 75%;
+}
+.lib-top{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0.5rem 0 1.1rem 1.1rem;
+}
+.lib-top i{
+    color: white;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.lib-top a:hover{
+    opacity: 1;
+}
+
+.lib-card{
+    background-color: rgba(128, 128, 128, 0.181);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.lib-card:last-child{
+    margin-bottom: 0;
+}
+.lib-card .card-title{
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+
+}
+.lib-card .card-text{
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 1.3rem;
+}
+.blurred{
+    color: white;
+    opacity: 0.9;
+}
+
+.badge{
+    border: none;
+    background-color: white;
+    border-radius: 0.95rem;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.badge:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.main-area{
+    background-color: rgba(128, 128, 128, 0.108);
+    border-radius: 0.75rem;
+    grid-column: 2/4;
+    grid-row: 1/12;
+}
+.top-navbar{
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#1e1d1d;
+    margin: 0.5rem 1.5rem;
+    position: sticky;
+    top: 0;
+}
+.top-navbar .arrows{
+    display: flex;
+    justify-content: space-between;
+}
+.top-navbar .right-section{
+    display: flex;
+    column-gap: 0.6rem;
+}
+.top-navbar .badge{
+    height: 2rem;
+}
+.top-navbar i{
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.download{
+    display: flex;
+    color: white;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+.main-area{
+    overflow-y: auto;
+}
+.music-section{
+    color: white;
+    font-weight: 600;
+    padding: 1.5rem;
+}
+.music-cards{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    column-gap: 1.5rem;
+}
+@media(max-width:1240px){
+    .music-cards{
+        grid-template-columns: repeat(4,1fr);
+        gap: 1.5rem;
+    }
+    .hide{
+        display: none;
+    }
+}
+@media(max-width:1020px){
+    .music-cards{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .hide1{
+        display: none;
+    }
+}
+@media(max-width:800px){
+    .music-cards{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .hide2{
+        display: none;
+    }
+}
+.music-card{
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.067);
+    width: 10rem;
+    padding: 1rem;
+    border-radius: 0.45rem;
+    transition: all 0.5s ease;
+}
+.music-card:hover{
+    background-color: rgba(128, 128, 128, 0.337);
+}
+.music-card:hover .hover-show{
+    display: inline;
+}
+.music-section .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.music-card .card-image{
+    height: 10rem;
+    border-radius: 0.5rem;
+}
+.music-card .card-text{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+.bottom-player{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-weight: 400;
+    font-size: 0.9rem;
+    grid-column: 1/4;
+    grid-row: 12/13;
+    display: flex;
+    align-items: center;
+}
+.currently-playing-card{
+    width: 25%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+.currently-playing-card .card-image{
+    height: 3rem;
+}
+.currently-playing-card .card-text{
+    opacity: 0.5;
+    font-size: 0.7rem;
+    padding-top: 0.3rem;
+}
+.currently-playing-card .like{
+    opacity: 0.5;
+}
+.music-player{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 50%;
+    padding: 1rem 0;
+}
+.music-player .controls{
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
+}
+.music-player .controls img:hover{
+    transform: scale(1.2);
+}
+.music-player .controls .play-pause{
+    transform: scale(2);
+}
+.music-player img{
+    height: 1rem;
+    width: 1rem;
+}
+
+.player-bar-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress-bar{
+    appearance: none;
+    width: 25rem;
+}
+.progress-bar::-webkit-slider-runnable-track{
+    cursor: pointer;
+    background-color: #ddd;
+    border-radius: 100px;
+    height: 0.15rem;
+}
+
+.progress-bar::-webkit-slider-thumb{
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: green;
+    margin-top: -0.5rem;
+}
+
+.other-controls{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+}
+.other-controls a{
+    opacity: 0.8;
+}
+.other-controls a:hover{
+    opacity: 1;
+    transform: scale(1.2);
+}
+input[name="volume"]{
+    appearance: none;
+    height: 0.2rem;
+    border-radius: 100px;
+}
+input[name="volume"]::-webkit-slider-thumb{
+    appearance: none;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: yellow;
+}
+.hover-show{
+    height: 3rem;
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    top: 40%;
+    right: 20%;
+    display: none;
+    transition: all 1s ease;
+}
